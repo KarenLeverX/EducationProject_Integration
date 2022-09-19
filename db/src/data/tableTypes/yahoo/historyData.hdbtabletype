@@ -1,0 +1,9 @@
+TYPE "yahooAPI::historyData" AS TABLE (
+		"Date" DATE,
+		"StockName" NVARCHAR(10),
+		"Open" DEC(25,15),
+		"High" DEC(25,15),
+		"Low" DEC(25,15),
+		"Close" DEC(25,15),
+     	"Volume" BIGINT
+     	 )
