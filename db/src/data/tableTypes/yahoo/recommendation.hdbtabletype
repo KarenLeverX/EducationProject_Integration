@@ -1,5 +1,5 @@
 TYPE "yahooAPI::recommend" AS TABLE (
-		Key "Date" TIMESTAMP,
+		"Date" TIMESTAMP,
 		"Firm" NVARCHAR(30),
 		"ToGrand" NVARCHAR(30),
 		"FromGrand" NVARCHAR(30),

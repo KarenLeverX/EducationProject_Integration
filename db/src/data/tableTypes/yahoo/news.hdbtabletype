@@ -1,5 +1,5 @@
 TYPE "yahooAPI:: news" AS TABLE (
-	Key "UID" NVARCHAR(50),
+	"UID" NVARCHAR(50),
 	"Title" TEXT,
 	"Publisher" NVARCHAR(30),
 	"LINK" TEXT,
