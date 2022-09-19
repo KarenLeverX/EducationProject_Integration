@@ -1,0 +1,38 @@
+ID: STOCKS_INTEGRATION
+_schema-version: "2.1"
+version: 0.0.1
+modules:
+  - name: STOCKS_INTEGRATION-db
+    type: hdb
+    path: db
+    parameters:
+      memory: 256M
+      disk-quota: 256M
+    requires:
+      - name: STOCKS_INTEGRATION-hdi-container
+  - name: STOCKS_INTEGRATION-srv
+    type: nodejs
+    path: srv
+    parameters:
+      memory: 512M
+      disk-quota: 256M
+    provides:
+      - name: srv_api
+        properties:
+          url: ${default-url}
+    requires:
+      - name: STOCKS_INTEGRATION-hdi-container
+      - name: STOCKS_INTEGRATION-uaa
+resources:
+  - name: STOCKS_INTEGRATION-hdi-container
+    type: com.sap.xs.hdi-container
+    properties:
+      hdi-container-name: ${service-name}
+  - name: STOCKS_INTEGRATION-uaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service-plan: default
+      service: xsuaa
+      config:
+        xsappname: STOCKS_INTEGRATION-${space}
+        tenant-mode: dedicated
