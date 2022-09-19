@@ -1,0 +1,8 @@
+COLUMN TABLE "Yahoo.EarningHistory" ( 
+		"EarningDate" Date,
+		"StockName" NVARCHAR(10),
+		"EpsEstimate" DEC(25,15),
+		"EpsReported" DEC(25,15),
+		"Surprise" NVARCHAR(10),
+     PRIMARY KEY ("EarningDate", "StockName")
+) 
