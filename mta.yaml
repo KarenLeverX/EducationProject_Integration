@@ -1,0 +1,38 @@
+ID: HDI_FOR_INTAGRATION_20092022
+_schema-version: "2.1"
+version: 0.0.1
+modules:
+  - name: HDI_FOR_INTAGRATION_20092022-db
+    type: hdb
+    path: db
+    parameters:
+      memory: 256M
+      disk-quota: 256M
+    requires:
+      - name: HDI_FOR_INTAGRATION_20092022-hdi-container
+  - name: HDI_FOR_INTAGRATION_20092022-srv
+    type: nodejs
+    path: srv
+    parameters:
+      memory: 512M
+      disk-quota: 256M
+    provides:
+      - name: srv_api
+        properties:
+          url: ${default-url}
+    requires:
+      - name: HDI_FOR_INTAGRATION_20092022-hdi-container
+      - name: HDI_FOR_INTAGRATION_20092022-uaa
+resources:
+  - name: HDI_FOR_INTAGRATION_20092022-hdi-container
+    type: com.sap.xs.hdi-container
+    properties:
+      hdi-container-name: ${service-name}
+  - name: HDI_FOR_INTAGRATION_20092022-uaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service-plan: default
+      service: xsuaa
+      config:
+        xsappname: HDI_FOR_INTAGRATION_20092022-${space}
+        tenant-mode: dedicated
