@@ -1,0 +1,8 @@
+TYPE "nasdaq::basicDataStock" AS TABLE (
+		"StockName" NVARCHAR(10),
+		"FullName" TEXT,
+		"Country" NVARCHAR(30),
+		"Sector"NVARCHAR(30),
+		"Industry" NVARCHAR(30),
+		"UrlNasdaq" TEXT
+     	 )
