@@ -1,0 +1,5 @@
+TYPE "yahooAPI::actions" AS TABLE (
+		"Date" Date,
+		"Dividends" DEC(25,15),
+		"Split" DEC(25,15)
+     	 )
