@@ -1,6 +1,6 @@
 COLUMN TABLE "Yahoo.HistoryData" ( 
-		"Date" DATE,
-	    "StockName" NVARCHAR(10),
+		"Date" DATE NOT NULL,
+	    "StockName" NVARCHAR(10) NOT NULL,
 		"Open" DEC(25,15),
 		"High" DEC(25,15),
 		"Low" DEC(25,15),

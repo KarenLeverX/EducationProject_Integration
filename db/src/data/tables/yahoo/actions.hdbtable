@@ -1,0 +1,6 @@
+COLUMN TABLE "Yahoo.Actions" ( 
+		"Date" Date NOT NULL,
+		"Dividends" DEC(25,15),
+		"Split" DEC(25,15),
+     PRIMARY KEY ("Date")
+) 

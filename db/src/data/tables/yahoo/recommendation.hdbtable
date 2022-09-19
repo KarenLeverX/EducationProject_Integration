@@ -1,5 +1,5 @@
 COLUMN TABLE "Yahoo.Recommendation" ( 
-		"Date" TIMESTAMP,
+		"Date" TIMESTAMP NOT NULL,
 		"Firm" NVARCHAR(30),
 		"ToGrand" NVARCHAR(30),
 		"FromGrand" NVARCHAR(30),

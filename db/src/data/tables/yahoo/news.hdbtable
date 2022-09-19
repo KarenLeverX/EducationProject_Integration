@@ -1,5 +1,5 @@
 COLUMN TABLE "Yahoo.News" ( 
-	"UID" NVARCHAR(50),
+	"UID" NVARCHAR(50) NOT NULL,
 	"Title" TEXT,
 	"Publisher" NVARCHAR(30),
 	"LINK" TEXT,

@@ -1,0 +1,9 @@
+COLUMN TABLE "Nasdaq.BasicDataStock" ( 
+		"StockName" NVARCHAR(10) NOT NULL,
+		"FullName" TEXT,
+		"Country" NVARCHAR(30),
+		"Sector"NVARCHAR(30),
+		"Industry" NVARCHAR(30),
+		"UrlNasdaq" TEXT,
+     PRIMARY KEY ("StockName")
+) 
