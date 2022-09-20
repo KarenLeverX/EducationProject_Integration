@@ -1,0 +1,8 @@
+{
+	"role":{
+		"name": "ownerStockRole#",
+		"schema_roles": [{
+		 "names": ["adminStock"]
+		}] 
+	}
+}
