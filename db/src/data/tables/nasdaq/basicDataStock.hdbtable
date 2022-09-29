@@ -3,7 +3,7 @@ COLUMN TABLE "Nasdaq.BasicDataStock" (
 		"FullName" TEXT,
 		"Country" NVARCHAR(30),
 		"Sector"NVARCHAR(30),
-		"Industry" NVARCHAR(30),
+		"Industry" NVARCHAR(200),
 		"UrlNasdaq" TEXT,
      PRIMARY KEY ("StockName")
 ) 

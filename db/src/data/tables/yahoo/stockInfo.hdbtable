@@ -1,0 +1,5 @@
+COLUMN TABLE "Yahoo.StockInfo" ( 
+		"StockName" NVARCHAR(10) NOT NULL,
+		"Info" NVARCHAR(5000),
+     PRIMARY KEY ("StockName")
+) 

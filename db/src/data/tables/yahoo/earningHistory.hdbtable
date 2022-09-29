@@ -1,5 +1,5 @@
 COLUMN TABLE "Yahoo.EarningHistory" ( 
-		"EarningDate" Date NOT NULL,
+		"EarningDate" NVARCHAR(30) NOT NULL,
 		"StockName" NVARCHAR(10) NOT NULL,
 		"EpsEstimate" DEC(25,15),
 		"EpsReported" DEC(25,15),

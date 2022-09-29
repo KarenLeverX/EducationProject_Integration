@@ -5,6 +5,6 @@ COLUMN TABLE "Yahoo.News" (
 	"LINK" TEXT,
 	"PublishTime" NVARCHAR(30),
 	"Type" NVARCHAR(30),
-	"RelatedTickets" NVARCHAR(50),
+	"RelatedTickets" NVARCHAR(150),
      PRIMARY KEY ("UID")
 ) 
