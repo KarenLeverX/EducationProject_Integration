@@ -1,10 +1,11 @@
 COLUMN TABLE "Yahoo.News" ( 
 	"UID" NVARCHAR(50) NOT NULL,
 	"Title" TEXT,
-	"Publisher" NVARCHAR(30),
+	"Publisher" NVARCHAR(100),
 	"LINK" TEXT,
 	"PublishTime" NVARCHAR(30),
 	"Type" NVARCHAR(30),
 	"RelatedTickets" NVARCHAR(150),
+	"Content" BLOB,
      PRIMARY KEY ("UID")
 ) 

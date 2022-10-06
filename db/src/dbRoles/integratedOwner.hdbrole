@@ -1,0 +1,11 @@
+{
+	"role":{
+		"name": "integratedRole#",
+		"schema_privileges": [{
+		   "privileges_with_grant_option": ["SELECT METADATA", 
+		    			  "SELECT CDS METADATA", 
+		    			  "SELECT"
+		   ]
+		}]
+	}
+}
