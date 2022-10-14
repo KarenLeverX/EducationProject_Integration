@@ -1,7 +1,4 @@
 FULLTEXT INDEX "indexStockInfo" on "Yahoo.StockInfo" ("Info")
-FAST PREPROCESS OFF
-SEARCH ONLY OFF
 TEXT ANALYSIS ON
-CONFIGURATION 'linganalysisFull'
-TEXT MINING ON
+CONFIGURATION 'extractionConfigEnterprise'
 LANGUAGE DETECTION ('EN');
