@@ -65,7 +65,7 @@
 
     <!-- Guess stems for tokens not found in a lexicon?  (default is 'false') -->
     <property name="EnableStemGuesser" type="boolean">
-      <boolean-value>false</boolean-value>
+      <boolean-value>true</boolean-value>
     </property>
 
     <!-- Determine the part of speech for each token?  (default is 'true') -->
