@@ -1,0 +1,4 @@
+FULLTEXT INDEX "indexStockInfo" on "Yahoo.StockInfo" ("Info")
+CONFIGURATION 'extractionCore'
+LANGUAGE DETECTION ('EN')
+TEXT ANALYSIS ON

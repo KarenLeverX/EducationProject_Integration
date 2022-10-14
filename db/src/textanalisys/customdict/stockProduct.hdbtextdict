@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary xmlns="http://www.sap.com/ta/4.0">
+<entity_category name="PRODUCT_ENERGY">
+	<entity_name standard_form="oil"/>
+	<entity_name standard_form="gas">
+		<variant name="gas-turbine"/>
+		<variant name="gas turbine"/>
+		<variant name="greenhouse gas"/>
+	</entity_name>
+	<entity_name standard_form="generation"/>
+	<entity_name standard_form="green energy"/>
+	<entity_name standard_form="geothermal"/>
+	<entity_name standard_form="hydrocarbon"/>
+</entity_category>
+</dictionary>
