@@ -1,0 +1,43 @@
+PROCEDURE "transposeStockName"( IN in_tab "yahooAPI:: news", IN in_uid NVARCHAR(50),OUT gt_tab "Custom::transformStockNews")
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY INVOKER
+   --DEFAULT SCHEMA <default_schema_name>
+   READS SQL DATA AS
+BEGIN
+   /*************************************
+       Write your procedure logic 
+   *************************************/
+   DECLARE lc_string NVARCHAR(500);
+   DECLARE CURSOR lc_allnews  FOR 
+						SELECT DISTINCT "UID", "RelatedTickets"
+										FROM :in_tab WHERE (:in_uid = 'DEFAULT'  AND "UID" != '') OR 
+										                   (:in_uid != 'DEFAULT' AND "UID" = :in_uid);
+   
+   FOR cur_row AS lc_allnews DO
+   
+   lc_string = TO_NVARCHAR(cur_row."RelatedTickets");
+   lc_splitstring = SELECT * FROM "splitString"(:lc_string, ' ');
+   
+   lt_filtered = 
+				SELECT "UID", 
+                        "PublishTime"
+                FROM :in_tab  WHERE "UID" = cur_row."UID";
+   
+   lc_results = 
+				SELECT  ADD_DAYS(TO_DATE('19700101'),TO_INT(TO_INT(TAB1."PublishTime" ) / 86400))  AS "PublishDate",
+				        TAB2."OUTPUT_SPLIT" AS "RelatedTickets", 
+				        TAB1."UID"
+	            FROM :lt_filtered AS TAB1
+	            INNER JOIN :lc_splitstring AS TAB2 
+	            ON TAB1."UID" != '';
+                
+    IF NOT IS_EMPTY(:lc_results) THEN 
+    gt_tab = SELECT * FROM ( SELECT * FROM :gt_tab UNION ALL SELECT * FROM :lc_results);
+    END IF;
+    
+   END FOR;
+   
+   gt_tab = SELECT "PublishDate", "RelatedTickets", STRING_AGG("UID",',') AS "UID"
+				FROM  :gt_tab
+				GROUP BY "RelatedTickets","PublishDate";
+END;

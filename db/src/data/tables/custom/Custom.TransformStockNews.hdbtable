@@ -1,0 +1,6 @@
+COLUMN TABLE "Custom.TransformStockNews" ( 
+	"PublishDate" DATE,
+	"RelatedTickets" NVARCHAR(150),
+	"UID" VARCHAR(5000),
+     PRIMARY KEY ("PublishDate", "RelatedTickets")
+)
